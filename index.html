@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Personal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #d20e7a;
+            color: rgb(6, 1, 1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #c20ed2;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #d20e7a;
+            padding: 10px 0;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #inicio, #perfil {
+            display: none;
+        }
+
+        #inicio.active, #perfil.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        body {
+    background-color: rgba(153, 70, 149, 0.589);
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#inicio" onclick="showSection('inicio')">Inicio</a></li>
+            <li><a href="#">Entradas</a>
+                <ul>
+                    <li><a href="#perfil" onclick="showSection('perfil')">Perfil</a></li>
+                    </ul>
+                   </li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="active">
+     <center> <h1>Eda lovace </h1> </center>
+      
+        <img src="img/images.jpg" alt="Descripción de la imagen" width="300" height="200">
+        <p>En este blog comparto mis pensamientos, ideas y experiencias sobre diferentes
+             temas que me apasionan. ¡Espero que disfrutes de la lectura!</p>
+             <li>Aca ponemos mas texto </li>
+
+    </section>
+    <img src="img/images.jpg" alt="Descripción de la imagen" width="300" height="200">
+
+    <section id="perfil">
+        <h1>Perfil</h1>
+        <p>Aquí encontrarás mis opiniones personales sobre diversos temas, desde tecnología 
+            hasta vida diaria. Este es un espacio donde expreso libremente mis puntos de vista.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mi Blog Personal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
